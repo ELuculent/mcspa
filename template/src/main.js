@@ -1,26 +1,46 @@
-{{#if_eq build "standalone"}}
-// The Vue build version to load with the `import` command
-// (runtime-only or standalone) has been set in webpack.base.conf with an alias.
-{{/if_eq}}
-import Vue from 'vue'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
-import App from './App'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
-{{#router}}
-import router from './router'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
-{{/router}}
+// Import Vue Library
+import Vue from 'vue'
+import App from './App'
+import VueRouter from 'vue-router'
 
-Vue.config.productionTip = false{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
+// Import Components
+import Home from './components/Home.vue'
+import About from './components/About.vue'
+import Server from './components/Server.vue'
 
-/* eslint-disable no-new */
+// Import Other Vue Stuff
+import BootstrapVue from '../node_modules/bootstrap-vue'
+import Carousel3d from '../node_modules/vue-carousel-3d'
+
+// Tell Vue to use Stuff
+Vue.use(Carousel3d)
+Vue.use(BootstrapVue)
+Vue.use(VueRouter)
+
+// Define Routes
+const routes = [
+
+    { path: '/', component: Home },
+    {path: '/about', component: About},
+    {path: '/server', component: Server}
+]
+
+// Make a router constant
+const router = new VueRouter({
+  routes, // short for routes: routes
+  mode: 'history'
+})
+
+// Start Vue instance
 new Vue({
+  // Define Selector to root
   el: '#app',
-  {{#router}}
-  router,
-  {{/router}}
-  {{#if_eq build "runtime"}}
-  render: h => h(App){{#if_eq lintConfig "airbnb"}},{{/if_eq}}
-  {{/if_eq}}
-  {{#if_eq build "standalone"}}
+  //Pass Template to root
   template: '<App/>',
-  components: { App }{{#if_eq lintConfig "airbnb"}},{{/if_eq}}
-  {{/if_eq}}
-}){{#if_eq lintConfig "airbnb"}};{{/if_eq}}
+  // Tell the root component to access componets
+  components: { App },
+  //Pass router
+  router
+}).$mount('#app')
+
+require('../css/css.css')
