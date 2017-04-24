@@ -1,59 +1,115 @@
-# vue-webpack-boilerplate
+# MCSPA by Luculent
 
-> A full-featured Webpack setup with hot-reload, lint-on-save, unit testing & css extraction.
+## Introduction
 
-> This template is Vue 2.0 compatible. For Vue 1.x use this command: `vue init webpack#1.0 my-project`
+Thanks for visiting the page. Please leave a review on the [SpigotMC Page]() and if you have any issues join my [Discord](https://discord.gg/BnJ5b5G) or message me on Discord "#9865" or open an issue here on Github and I will get to it quickly.
 
-## Documentation
+>Vue: pronouced like 'view' :)
 
-- [For this template](http://vuejs-templates.github.io/webpack): common questions specific to this template are answered and each part is described in greater detail
-- [For Vue 2.0](http://vuejs.org/guide/): general information about how to work with Vue, not specific to this template
+>Note: This is not a dynamioc (PHP) page. This is purely just for information. I am currently working on a PHP version but it wil be some time before I release that.
 
-## Usage
+## Template
 
-This is a project template for [vue-cli](https://github.com/vuejs/vue-cli). **It is recommended to use npm 3+ for a more efficient dependency tree.**
+Unlike some "single page templates" this uses components that are rendered by vue.js and vue-router. This means that your website is fast and looks as refined as a website with multiple pages (MPA). 
 
-``` bash
-$ npm install -g vue-cli
-$ vue init webpack my-project
-$ cd my-project
+## Custom HTML Tags
+
+This template uses custom HTML tags that define to different things. This section explains all that are used.
+
+___
+
+### Router-Link
+
+The `<router-link>` tag renders to `<a>` as a HTML tag. This is a component used by Vue-Router to define the SPA links. This removes the load time from the pages completely. So long as the page is defined in "routes" in the file "src\main.js"
+
+### Bootstrap-Vue
+
+Due to the huge amount of tags used in this component we have included [this link](https://bootstrap-vue.github.io/ "BS-Vue") to the Bootstrap-Vue home page. This is used in combination with Bootstrap 4 for fast loading adaption to the resolution seen. We have used dropdowns, media, navbars and others in this template.
+
+___
+
+## How to Install
+
+Clone the repository
+
+```BASH
+$ git clone http://github.com/ELuculent/repository-name.git
+``` 
+or clone it from github
+
+or download it from [SpigotMC](link.here)
+
+or vue-cli:
+
+```BASH
+$ npm install vue-cli
+$ vue init ELuculent/MCSPA mcspa
+```
+  ***
+Install the dependencies
+
+```BASH
+$ cd mcspa
 $ npm install
+```
+***
+And that's it!
+
+To run the app in development mode type the following:
+```BASH
 $ npm run dev
 ```
 
-If port 8080 is already in use on your machine you must change the port number in `/config/index.js`. Otherwise `npm run dev` will fail.
+>Note: You do not need [Git Bash](https://git-for-windows.github.io/) to run npm however you will need [node.js](https://nodejs.org/). Git Bash is only used in this example as it is supported by markdown. NPM is included in node.js.
 
-## What's Included
+___
 
-- `npm run dev`: first-in-class development experience.
-  - Webpack + `vue-loader` for single file Vue components.
-  - State preserving hot-reload
-  - State preserving compilation error overlay
-  - Lint-on-save with ESLint
-  - Source maps
+## How to Add More Pages
 
-- `npm run build`: Production ready build.
-  - JavaScript minified with [UglifyJS](https://github.com/mishoo/UglifyJS2).
-  - HTML minified with [html-minifier](https://github.com/kangax/html-minifier).
-  - CSS across all components extracted into a single file and minified with [cssnano](https://github.com/ben-eb/cssnano).
-  - All static assets compiled with version hashes for efficient long-term caching, and a production `index.html` is auto-generated with proper URLs to these generated assets.
-  - Use `npm run build --report`to build with bundle size analytics.
+The template uses .vue files defined by [vue.js](https://vuejs.org/) to manage its components. To add another page, make a .vue file in "src\components" and add the following code to it.
+```html
+<template>
 
-- `npm run unit`: Unit tests run in PhantomJS with [Karma](http://karma-runner.github.io/0.13/index.html) + [Mocha](http://mochajs.org/) + [karma-webpack](https://github.com/webpack/karma-webpack).
-  - Supports ES2015+ in test files.
-  - Supports all webpack loaders.
-  - Easy mock injection.
+</template>
 
-- `npm run e2e`: End-to-end tests with [Nightwatch](http://nightwatchjs.org/).
-  - Run tests in multiple browsers in parallel.
-  - Works with one command out of the box:
-    - Selenium and chromedriver dependencies automatically handled.
-    - Automatically spawns the Selenium server.
+<script>
+export default {
+  name: 'filename'
+ }
+</script>
 
-### Fork It And Make Your Own
-
-You can fork this repo to create your own boilerplate, and use it with `vue-cli`:
-
-``` bash
-vue init username/repo my-project
+<style scoped>
+	
+</style>
 ```
+
+To register the route go to "src\main.js" and input the following code under "routes"
+
+```javascript
+import componentName from './components/componentName.vue'
+
+{path: '/pagename', component: componentName}
+```
+
+Then in "src\App.vue" input the following into the navbar:
+
+```html
+<li class="nav-item">
+	<router-link class="nav-link" v-bind:to="'/pagename'">Page</router-link>
+</li>
+```
+
+___
+
+## Dependencies
+
+To use this site you must have the following:
+
+* Node Package Manager (NPM) - easiest way to get this is to download [node.js](https://nodejs.org/en/download/current/) 
+* Git Bash (optional) - get from [here](https://git-scm.com/downloads)
+
+
+## Best Practices
+
+For best practices I do recommend separating your code into sections. all css should be done in an external file but you may also do it in the "src\App.vue" file. This will just ensure you don't get confused. Making comments as you go along is up to you but I find it helps a lot when reading it later.
+
