@@ -4,13 +4,13 @@
 
 Thanks for visiting the page. Please leave a review on the [SpigotMC Page]() and if you have any issues join my [Discord](https://discord.gg/BnJ5b5G) or message me on Discord "#9865" or open an issue here on Github and I will get to it quickly.
 
->Vue: pronouced like 'view' :)
+>Vue: pronounced like 'view' :)
 
->Note: This is not a dynamioc (PHP) page. This is purely just for information. I am currently working on a PHP version but it wil be some time before I release that.
+>Note: This is not a dynamic (PHP) page. This is purely just for information. I am currently working on a PHP version but it will be some time before I release that.
 
 ## Template
 
-Unlike some "single page templates" this uses components that are rendered by vue.js and vue-router. This means that your website is fast and looks as refined as a website with multiple pages (MPA). 
+Unlike some "single page templates," this uses components that are rendered by vue.js and Vue-router. This means that your website is fast and looks as refined as a website with multiple pages (MPA). 
 
 ## Custom HTML Tags
 
@@ -35,7 +35,7 @@ Clone the repository
 ```BASH
 $ git clone http://github.com/ELuculent/repository-name.git
 ``` 
-or clone it from github
+or clone it from GitHub
 
 or download it from [SpigotMC](link.here)
 
@@ -79,7 +79,7 @@ export default {
 </script>
 
 <style scoped>
-	
+    
 </style>
 ```
 
@@ -95,7 +95,7 @@ Then in "src\App.vue" input the following into the navbar:
 
 ```html
 <li class="nav-item">
-	<router-link class="nav-link" v-bind:to="'/pagename'">Page</router-link>
+    <router-link class="nav-link" v-bind:to="'/pagename'">Page</router-link>
 </li>
 ```
 
@@ -111,5 +111,4 @@ To use this site you must have the following:
 
 ## Best Practices
 
-For best practices I do recommend separating your code into sections. all css should be done in an external file but you may also do it in the "src\App.vue" file. This will just ensure you don't get confused. Making comments as you go along is up to you but I find it helps a lot when reading it later.
-
+For best practices, I do recommend separating your code into sections. all CSS should be done in an external file but you may also do it in the "src\App.Vue" file. This will just ensure you don't get confused. Making comments as you go along is up to you but I find it helps a lot when reading it later.
