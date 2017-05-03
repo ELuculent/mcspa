@@ -1,5 +1,5 @@
 <template>
-<div class="container-fluid">
+<div class="container-fluid" style="background-color: #383838;">
 <br /><br /><br />
   <center>
     <div class="container-fluid">
@@ -38,18 +38,38 @@
                   </b-card>
 
               </b-collapse>
-
+                <br/><br/><br/><br/>
+              
+               <h1>Social</h1>
+               <iframe src="discordAppWidget" width="350" height="500" allowtransparency="true" frameborder="0"></iframe>
         </div>
         <div class="col-1">
 
         </div>
         <div class="col">
-
+            <h1>News</h1>
+            <br/><br/><br/>
+            <!-- News Card duplicate from the card div to the final <br/> tag to get more -->
+            <div class="card">
+              <div class="card-block" style="background-color:wheat;">
+                <!-- Non functional button (for style) -->
+                <h3 class="card-title btn-block btn-primary">Title</h3>
+                <p class="card-text" style="color:black">Text Here. Vivamus ultricies nec lorem id egestas. Curabitur iaculis mauris id eros commodo blandit. Nullam posuere mi sit amet ex pharetra interdum at sed dolor. Duis nulla velit, eleifend quis congue eget, sodales id nibh. Mauris quis lacus eros. In nisl eros, dapibus quis tincidunt et, ullamcorper in erat. Morbi feugiat, nibh in lacinia porttitor, ex ligula pellentesque lorem, sit amet volutpat nisi elit at leo. </p> 
+              </div>
+            </div>
+            <br/><br/><br/>
+            <div class="card">
+              <div class="card-block" style="background-color:wheat;">
+                <h3 class="card-title btn-block btn-primary">Title</h3>
+                <p class="card-text" style="color:black">Text Here. Vivamus ultricies nec lorem id egestas. Curabitur iaculis mauris id eros commodo blandit. Nullam posuere mi sit amet ex pharetra interdum at sed dolor. Duis nulla velit, eleifend quis congue eget, sodales id nibh. Mauris quis lacus eros. In nisl eros, dapibus quis tincidunt et, ullamcorper in erat. Morbi feugiat, nibh in lacinia porttitor, ex ligula pellentesque lorem, sit amet volutpat nisi elit at leo. </p> 
+              </div>
+            </div>
+            
         </div>
   </div>
   <div class="row">
     <div class="col">
-
+       
     </div>
     <div class="col-1">
 
@@ -64,33 +84,39 @@
 </template>
 
 <script>
-export default {
-  name: 'server'
-}
+    export default {
+        name: 'server'
+    }
+
 </script>
 
 <style scoped>
-
-    .server-status{
+    .server-status {
         background-color: #323232;
         color: #00ffff;
     }
-    .onlineQuery{
+    
+    .onlineQuery {
         color: #00ffff;
     }
-    .status-head{
+    
+    .status-head {
         color: red;
     }
-    .count{
+    
+    .count {
         color: red;
     }
-    .max{
+    
+    .max {
         color: red;
     }
-    .last-online{
+    
+    .last-online {
         color: red;
     }
-    .container-fluid{
+    
+    .container-fluid {
         background-color: #383838;
         color: white;
     }

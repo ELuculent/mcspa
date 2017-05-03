@@ -7,6 +7,9 @@ import VueRouter from 'vue-router'
 import Home from './components/Home.vue'
 import About from './components/About.vue'
 import Server from './components/Server.vue'
+import Vote from './components/Vote.vue'
+import Staff from './components/Staff.vue'
+import Apply from './components/Apply.vue'
 
 // Import Other Vue Stuff
 import BootstrapVue from '../node_modules/bootstrap-vue'
@@ -20,9 +23,30 @@ Vue.use(VueRouter)
 // Define Routes
 const routes = [
 
-    { path: '/', component: Home },
-    {path: '/about', component: About},
-    {path: '/server', component: Server}
+    {
+        path: '/', 
+        component: Home 
+    },
+    {
+        path: '/about',
+        component: About
+    },
+    {
+        path: '/server',
+        component: Server,
+    },
+    {
+        path: '/vote',
+        component: Vote
+    },
+    {
+        path: '/staff',
+        component: Staff
+    },
+    {
+        path: '/apply',
+        component: Apply
+    }
 ]
 
 // Make a router constant

@@ -3,7 +3,6 @@
 
   <nav class="navbar fixed-top navbar-toggleable-md navbar-inverse" style="background-color:#000000;">
     <b-nav-toggle target="nav_collapse"></b-nav-toggle>
-  </button>
   <b-link class="navbar-brand" to="/">
       <span style="color:#00ffff;">
           <img src="assets/logo.png" /> Template
@@ -28,7 +27,6 @@
               <!-- Dropdown Links -->
               <b-dropdown-item v-bind:to="'/server'">Information</b-dropdown-item>
               <b-dropdown-item v-bind:to="'/vote'">Vote</b-dropdown-item>
-              <b-dropdown-item v-bind:to="'/donate'">Donate</b-dropdown-item>
               <!-- Separate Dropdown Sectio -->
               <div class="dropdown-divider"></div>
                 <!-- Dropdown Header -->
@@ -47,7 +45,7 @@
   <!-- the router outlet, where all matched components would ber viewed -->
 
 
-  <router-view></router-view>
+ <router-view></router-view>
   </div>
 </template>
 
@@ -235,8 +233,8 @@
     height: 100%;
 }
 
-.container-fliud #wrapper {
-    background-color: darkorange;
+.container-fliud {
+    background-color: #383838;
 }
 .jumbotron{
     background-color: darkgray;
@@ -244,5 +242,17 @@
 .jumbotron-header{
 
 }
+  html,body {
+  height:100%;
+  margin:0;
+}
 
+.content {
+  height:100%;
+  min-height:100%;/*for mozilla*/
+}
+
+html>body .content {
+  height:auto;
+}
 </style>
